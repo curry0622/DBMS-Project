@@ -2,18 +2,24 @@
 
 ## Install Dependencies
 
-```python
+```shell
 pipenv install
 ```
 
 ## Activate Virtualenv
 
-```python
+```shell
 pipenv shell
 ```
 
 ## Run Code
 
-```python
+```shell
 pipenv run python main.py
+```
+
+## Development: Convert UI to py
+
+```shell
+pyuic5 [FILE_NAME].ui -o [FILE_NAME].py
 ```

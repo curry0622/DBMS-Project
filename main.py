@@ -1,20 +1,10 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import pyqtSlot
+from PyQt5 import QtWidgets
 
-def window():
-   app = QApplication(sys.argv)
-   widget = QWidget()
-
-   textLabel = QLabel(widget)
-   textLabel.setText("Hello World!")
-   textLabel.move(110,85)
-
-   widget.setGeometry(50,50,320,200)
-   widget.setWindowTitle("PyQt5 Example")
-   widget.show()
-   sys.exit(app.exec_())
+from controller import MainWindow_controller
 
 if __name__ == '__main__':
-   window()
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    window = MainWindow_controller()
+    window.show()
+    sys.exit(app.exec_())
