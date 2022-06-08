@@ -10,7 +10,8 @@ class MainWindow_controller(QtWidgets.QMainWindow):
         self.setup_control()
 
     def setup_control(self):
-        self.ui.pushButton.clicked.connect(self.test_func)
+        # self.ui.pushButton.clicked.connect(self.test_func)
+        return
 
     def test_func(self):
         print('test')
