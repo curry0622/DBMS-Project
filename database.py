@@ -2,15 +2,17 @@ import mysql.connector
 
 class Database:
     def __init__(self):
-        self.db = mysql.connector.connect(
+        self.connection = mysql.connector.connect(
             host='localhost',
             user='root',
             passwd='A142536',
-            database='sql_test'
+            database='nba'
         )
-        self.cursor = self.db.cursor()
+        self.cursor = self.connection.cursor()
+        self.cursor.execute('SET SQL_SAFE_UPDATES = 0;')
 
 if __name__ == '__main__':
     db = Database()
-    db.cursor.execute('SELECT * FROM `student`')
-    print(db.cursor.fetchall())
+    db.cursor.execute('SELECT * FROM `player`')
+    for row in db.cursor:
+        print(row, end='\n')
