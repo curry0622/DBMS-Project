@@ -1,7 +1,6 @@
 # 1 SELECT-FROM-WHERE
 # 顯示所有 team_id 為 1 的球員名字
 SELECT `name` FROM `player` WHERE `team_id` = 1;
-SELECT * FROM `player`;
 
 # DELETE
 # 刪除名為 Ed Malloy 的裁判
@@ -22,7 +21,6 @@ SELECT * from `shoes`;
 # IN
 # 顯示出 team_id = (1, 2) 的所有球員名字
 SELECT `name` FROM `player` WHERE `team_id` IN (1, 2);
-SELECT * FROM `player`;
 
 # NOT IN
 SELECT `name` FROM `player` WHERE `team_id` NOT IN (1, 2);
@@ -30,7 +28,6 @@ SELECT `name` FROM `player` WHERE `team_id` NOT IN (1, 2);
 # EXISTS
 # 若 team 中存在 team_id = 2 則顯示出所有球員的名字
 SELECT `name` FROM `player` WHERE EXISTS (SELECT * FROM `team` WHERE `team`.team_id = 2);
-SELECT * FROM `team`;
 
 # NOT EXISTS
 # 若 team 中不存在 team_id = 2 則顯示出所有球員的名字
@@ -39,7 +36,6 @@ SELECT `name` FROM `player` WHERE NOT EXISTS (SELECT * FROM `team` WHERE `team`.
 # COUNT
 # 顯示代言人 id 為 1 的人所代言的鞋子總數
 SELECT COUNT(`name`) FROM `shoes` WHERE `endorser_id` = 1;
-SELECT * FROM `shoes`;
 
 # SUM
 # 顯示代言人 id 為 1 所代言的鞋子總價
